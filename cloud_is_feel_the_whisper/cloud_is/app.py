@@ -66,21 +66,21 @@ def show_sidebar():
         page = st.radio(
             "Navigácia",
             [
-                "📊 Dashboard",
-                "👥 Zákazníci",
-                "📦 Objednávky zákazníkov",
-                "🏭 Objednávky dodávateľov",
-                "📅 Kalendár termínov",
-                "💰 Financie",
-                "📣 Marketing",
+                " Dashboard",
+                " Zákazníci",
+                " Objednávky zákazníkov",
+                " Objednávky dodávateľov",
+                " Kalendár termínov",
+                " Financie",
+                " Marketing",
             ],
             label_visibility="collapsed",
         )
 
         if st.session_state.user["role"] == "admin":
             st.divider()
-            if st.checkbox("⚙️ Správa používateľov"):
-                page = "⚙️ Správa používateľov"
+            if st.checkbox(" Správa používateľov"):
+                page = " Správa používateľov"
 
         st.divider()
         if st.button("🚪 Odhlásiť sa", use_container_width=True):
@@ -96,27 +96,27 @@ if st.session_state.user is None:
 else:
     page = show_sidebar()
 
-    if page == "📊 Dashboard":
+    if page == " Dashboard":
         from pages.dashboard import show
         show()
-    elif page == "👥 Zákazníci":
+    elif page == " Zákazníci":
         from pages.customers import show
         show()
-    elif page == "📦 Objednávky zákazníkov":
+    elif page == " Objednávky zákazníkov":
         from pages.customer_orders import show
         show()
-    elif page == "🏭 Objednávky dodávateľov":
+    elif page == " Objednávky dodávateľov":
         from pages.supplier_orders import show
         show()
-    elif page == "📅 Kalendár termínov":
+    elif page == " Kalendár termínov":
         from pages.calendar import show
         show()
-    elif page == "💰 Financie":
+    elif page == " Financie":
         from pages.finances import show
         show()
-    elif page == "📣 Marketing":
+    elif page == " Marketing":
         from pages.marketing import show
         show()
-    elif page == "⚙️ Správa používateľov":
+    elif page == " Správa používateľov":
         from pages.users import show
         show()
